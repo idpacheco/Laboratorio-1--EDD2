@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://x4gwdkly302u"]
+
+[ext_resource type="Texture2D" uid="uid://c6laxy0ju7cxo" path="res://Level 2/assets/background.png" id="1_7e6sy"]
+[ext_resource type="Texture2D" uid="uid://h1h5nddbvo38" path="res://Level 2/assets/Level 2.png" id="2_x8a4r"]
+[ext_resource type="Texture2D" uid="uid://d0tgxj464u5qn" path="res://Level 2/assets/Play_1.png" id="3_xagyt"]
+[ext_resource type="Texture2D" uid="uid://q2blks5hcq61" path="res://Level 2/assets/Play_3.png" id="4_hpmgr"]
+[ext_resource type="Texture2D" uid="uid://dkwsq6yp8t1p2" path="res://Level 2/assets/Play_2.png" id="5_w2ra7"]
+[ext_resource type="Texture2D" uid="uid://cwg147a280o1n" path="res://Level 2/assets/lupa_1.png" id="6_xagyt"]
+[ext_resource type="Texture2D" uid="uid://b4didgthv651j" path="res://Level 2/assets/lupa_2.png" id="7_hpmgr"]
+
+[sub_resource type="GDScript" id="GDScript_w1uea"]
+script/source = "extends Control
+
+func _on_play_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Level 2/scenes/level2_minigame.tscn\")
+
+
+func _on_guia_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Level 2/scenes/Aviso.tscn\")
+"
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_w1uea")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_7e6sy")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 176.0
+offset_right = 920.0
+offset_bottom = 488.0
+texture = ExtResource("2_x8a4r")
+expand_mode = 1
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 512.0
+offset_right = 716.0
+offset_bottom = 578.0
+texture_normal = ExtResource("3_xagyt")
+texture_pressed = ExtResource("4_hpmgr")
+texture_hover = ExtResource("5_w2ra7")
+stretch_mode = 3
+
+[node name="GuiaButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 600.0
+offset_right = 648.0
+offset_bottom = 648.0
+texture_normal = ExtResource("6_xagyt")
+texture_pressed = ExtResource("7_hpmgr")
+stretch_mode = 0
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GuiaButton" to="." method="_on_guia_button_pressed"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxne5nv1wtoob"]
+
+[ext_resource type="Script" uid="uid://drvbkavt2unq1" path="res://Level 2/scripts/aviso.gd" id="1_8f4eu"]
+[ext_resource type="Texture2D" uid="uid://c6laxy0ju7cxo" path="res://Level 2/assets/background.png" id="1_l3k8t"]
+[ext_resource type="Texture2D" uid="uid://86qklleusg7k" path="res://Level 2/assets/aviso.png" id="2_8f4eu"]
+[ext_resource type="Texture2D" uid="uid://b3q6njmkf4r7o" path="res://Level 2/assets/Continue_1.png" id="3_3ng3d"]
+[ext_resource type="Texture2D" uid="uid://c63keotn37yk3" path="res://Level 2/assets/Continue_3.png" id="4_bvtxf"]
+[ext_resource type="Texture2D" uid="uid://cpyu3tthbc7a0" path="res://Level 2/assets/Continue_2.png" id="5_56icu"]
+[ext_resource type="Texture2D" uid="uid://cjr6qryao3dlx" path="res://Level 2/assets/back_1.png" id="7_bvtxf"]
+[ext_resource type="Texture2D" uid="uid://dbih1chuls8sj" path="res://Level 2/assets/back_2.png" id="8_56icu"]
+
+[node name="Aviso" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8f4eu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 728.0
+texture = ExtResource("1_l3k8t")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 32.0
+anchor_bottom = 18.0
+offset_left = 248.0
+offset_top = 216.0
+offset_right = -288.0
+offset_bottom = -168.0
+texture = ExtResource("2_8f4eu")
+expand_mode = 1
+
+[node name="next_to_indicaciones" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 576.0
+offset_right = 724.0
+offset_bottom = 642.0
+texture_normal = ExtResource("3_3ng3d")
+texture_pressed = ExtResource("4_bvtxf")
+texture_hover = ExtResource("5_56icu")
+
+[node name="back_to_inicio" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 664.0
+offset_right = 1264.0
+offset_bottom = 704.0
+texture_normal = ExtResource("7_bvtxf")
+texture_pressed = ExtResource("8_56icu")
+stretch_mode = 0
+
+[connection signal="pressed" from="next_to_indicaciones" to="." method="_on_next_to_indicaciones_pressed"]
+[connection signal="pressed" from="back_to_inicio" to="." method="_on_back_to_inicio_pressed"]

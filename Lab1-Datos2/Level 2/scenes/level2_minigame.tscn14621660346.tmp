@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwf7ple4lvvbo"]
+
+[ext_resource type="Texture2D" uid="uid://c7m5lwwfceqvr" path="res://!!/Box_Orange_Square.png" id="1_at5nb"]
+[ext_resource type="Script" uid="uid://cr0kpccnrt6g8" path="res://game.gd" id="1_ur881"]
+[ext_resource type="Texture2D" uid="uid://1r5hwbmvp3k8" path="res://!!/SlimSlider_Background.png" id="2_eejla"]
+[ext_resource type="Texture2D" uid="uid://b4kgg8ck5fm8g" path="res://!!/SlimSlider_Base.png" id="3_hnh3m"]
+[ext_resource type="PackedScene" uid="uid://dvtxkhxuaoqx1" path="res://virus.tscn" id="4_eejla"]
+[ext_resource type="PackedScene" uid="uid://bsdtto8hf1gc6" path="res://target.tscn" id="6_qrmah"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur881"]
+texture = ExtResource("1_at5nb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qrmah"]
+texture = ExtResource("2_eejla")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkhey"]
+texture = ExtResource("3_hnh3m")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msu3l"]
+bg_color = Color(0.381704, 0.381703, 0.381703, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Game" type="Control" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ur881")
+
+[node name="PanelContainer" type="PanelContainer" parent="Game"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ur881")
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CatchBar" type="ProgressBar" parent="Game/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_qrmah")
+theme_override_styles/fill = SubResource("StyleBoxTexture_jkhey")
+
+[node name="Box" type="PanelContainer" parent="Game/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_msu3l")
+
+[node name="virus" parent="." instance=ExtResource("4_eejla")]
+position = Vector2(576, 320)
+
+[node name="Target" parent="." instance=ExtResource("6_qrmah")]
+position = Vector2(576, 320)
+
+[connection signal="target_entered" from="Target" to="Game" method="_on_target_target_entered"]
+[connection signal="target_exited" from="Target" to="Game" method="_on_target_target_exited"]
