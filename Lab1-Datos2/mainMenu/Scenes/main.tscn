@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://bughfyso16oex"]
+
+[ext_resource type="Script" uid="uid://b77s0v05gyvfp" path="res://mainMenu/Scripts/main.gd" id="1_gaibg"]
+[ext_resource type="Texture2D" uid="uid://ybptnchfqwi3" path="res://mainMenu/Assets/Images/VIRUS HUNTER.png" id="1_x8rku"]
+[ext_resource type="Texture2D" uid="uid://bg7o5kaxcpji0" path="res://mainMenu/Assets/buttons/playNormal.tres" id="2_pua35"]
+[ext_resource type="Texture2D" uid="uid://b30appaemqify" path="res://mainMenu/Assets/buttons/playHover.tres" id="3_oqk3p"]
+[ext_resource type="Texture2D" uid="uid://cae07jewvqay5" path="res://mainMenu/Assets/buttons/playPressed.tres" id="4_pua35"]
+[ext_resource type="Texture2D" uid="uid://byvk2pbslmsdm" path="res://mainMenu/Assets/buttons/settingsNormal.tres" id="5_fm4nx"]
+[ext_resource type="Texture2D" uid="uid://dca3lp1fsg6ri" path="res://mainMenu/Assets/buttons/SettingsPressed.tres" id="6_gaibg"]
+[ext_resource type="Texture2D" uid="uid://chopkqxe7fcxx" path="res://mainMenu/Assets/buttons/settingsHover.tres" id="7_r0fpq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gjnod"]
+texture = ExtResource("1_x8rku")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gaibg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 641.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gjnod")
+
+[node name="playButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 96.0
+offset_right = 565.0
+offset_bottom = 163.0
+texture_normal = ExtResource("2_pua35")
+texture_pressed = ExtResource("4_pua35")
+texture_hover = ExtResource("3_oqk3p")
+
+[node name="settingsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 224.0
+offset_right = 564.0
+offset_bottom = 290.0
+texture_normal = ExtResource("5_fm4nx")
+texture_pressed = ExtResource("6_gaibg")
+texture_hover = ExtResource("7_r0fpq")
+
+[connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]

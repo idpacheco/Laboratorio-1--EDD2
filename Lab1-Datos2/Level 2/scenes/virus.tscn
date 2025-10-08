@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dvtxkhxuaoqx1"]
 
-[ext_resource type="Script" uid="uid://xeukt0hl5lys" path="res://virus.gd" id="1_ifgnm"]
-[ext_resource type="Texture2D" uid="uid://hpt22ssls2ge" path="res://!!/Viral_Creatures_Pack1.png" id="2_8v58v"]
+[ext_resource type="Script" uid="uid://xeukt0hl5lys" path="res://Level 2/scripts/virus.gd" id="1_ifgnm"]
+[ext_resource type="Texture2D" uid="uid://hpt22ssls2ge" path="res://Level 2/assets/Viral_Creatures_Pack1.png" id="2_8v58v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fg0l"]
 atlas = ExtResource("2_8v58v")

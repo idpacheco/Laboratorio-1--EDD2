@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsdtto8hf1gc6"]
 
-[ext_resource type="Script" uid="uid://c5vqd1x5m04oy" path="res://target.gd" id="1_e1yvt"]
-[ext_resource type="Texture2D" uid="uid://dahyf3y67wqhk" path="res://!!/Crosshair .png" id="1_t2jmu"]
+[ext_resource type="Script" uid="uid://c5vqd1x5m04oy" path="res://Level 2/scripts/target.gd" id="1_e1yvt"]
+[ext_resource type="Texture2D" uid="uid://dahyf3y67wqhk" path="res://Level 2/assets/Crosshair .png" id="1_t2jmu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1yvt"]
 radius = 25.0

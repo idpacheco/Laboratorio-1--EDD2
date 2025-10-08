@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Lab1-Datos2"
-run/main_scene="uid://x4gwdkly302u"
+run/main_scene="uid://bughfyso16oex"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneTransitions="*res://mainMenu/Scenes/SceneTransitions.tscn"
 
 [display]
 
