@@ -16,26 +16,26 @@ grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 718.0
+offset_right = 639.0
+offset_bottom = 360.0
 texture = ExtResource("1_kykcv")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 245.0
-offset_top = 107.0
-offset_right = 1016.0
-offset_bottom = 552.0
+offset_left = 143.0
+offset_top = 53.0
+offset_right = 486.0
+offset_bottom = 276.0
 texture = ExtResource("2_ghhai")
 expand_mode = 1
 
 [node name="continue" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 531.0
-offset_top = 581.0
-offset_right = 735.0
-offset_bottom = 647.0
+offset_left = 255.0
+offset_top = 288.0
+offset_right = 357.0
+offset_bottom = 321.0
 texture_normal = ExtResource("3_5ata6")
 texture_pressed = ExtResource("4_hb2dg")
 texture_hover = ExtResource("5_bhdai")
