@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=4 uid="uid://b8ba0ih1tumm2"]
+[gd_scene load_steps=18 format=4 uid="uid://b8ba0ih1tumm2"]
 
 [ext_resource type="Texture2D" uid="uid://dcry181iwvmsx" path="res://Map/assets/tiles2/tileset x1.png" id="1_gvhjg"]
+[ext_resource type="Script" uid="uid://rsdersmclu7h" path="res://Map/scences/maps/level_1_map.gd" id="1_q7pff"]
 [ext_resource type="TileSet" uid="uid://hq7fnwobye1j" path="res://Level 4/tiles/tileset/level4Tiles.tres" id="3_jpwqv"]
 [ext_resource type="PackedScene" uid="uid://bx3dkkkug6ra4" path="res://Map/scences/objects/incubadora.tscn" id="4_c2q2h"]
 [ext_resource type="Texture2D" uid="uid://lxm7t21avqrg" path="res://Map/assets/tiles2/props and items x1.png" id="5_q7pff"]
 [ext_resource type="PackedScene" uid="uid://bmiublmdwndu5" path="res://Map/scences/objects/big_door.tscn" id="6_gvhjg"]
 [ext_resource type="PackedScene" uid="uid://d0cxivc2i4qob" path="res://Map/scences/eje.tscn" id="6_hb8d2"]
 [ext_resource type="Script" uid="uid://bni1ve4ejsgbj" path="res://Map/scripts/exit.gd" id="7_pnid6"]
+[ext_resource type="PackedScene" uid="uid://dpwmk1u3eg5jx" path="res://Map/scences/objects/computer.tscn" id="8_c2q2h"]
+[ext_resource type="Script" uid="uid://brltgcfhynban" path="res://Map/scences/objects/level1.gd" id="9_q7pff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08inp"]
 texture = ExtResource("1_gvhjg")
@@ -2352,7 +2355,11 @@ sources/1 = SubResource("TileSetAtlasSource_5af36")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpwqv"]
 size = Vector2(72, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2q2h"]
+size = Vector2(66, 26)
+
 [node name="Level1_map" type="Node2D"]
+script = ExtResource("1_q7pff")
 
 [node name="piso" type="TileMapLayer" parent="."]
 rotation = 3.1423774
@@ -2374,7 +2381,7 @@ tile_map_data = PackedByteArray("AAAAAAUAAQAbACcAADABAAUAAQAVACMAADACAAUAAQAVACM
 tile_set = SubResource("TileSet_4mi5f")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_hb8d2")]
-position = Vector2(312, 194)
+position = Vector2(319.00003, 233.00002)
 scale = Vector2(0.4210527, 0.38528872)
 
 [node name="Big door" parent="." instance=ExtResource("6_gvhjg")]
@@ -2390,5 +2397,15 @@ script = ExtResource("7_pnid6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-8, 17)
 shape = SubResource("RectangleShape2D_jpwqv")
+
+[node name="Computer" parent="." instance=ExtResource("8_c2q2h")]
+position = Vector2(318, 205)
+script = ExtResource("9_q7pff")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, 19)
+shape = SubResource("RectangleShape2D_c2q2h")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
