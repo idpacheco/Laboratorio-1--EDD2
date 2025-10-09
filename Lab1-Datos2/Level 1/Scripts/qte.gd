@@ -1,52 +1,47 @@
 extends Control
 
-signal finished(success: bool)
+signal finished(success: bool, elapsed: float)
 
-@export var keyString: String = "Q"
-@export var keyCode: Key = KEY_Q
-@export var eventDuration := 5.0
+@export var keyCode: Key = KEY_A
+@export var eventDuration := 3
 @export var displayDuration := 0.5
 
 @onready var color_rect: ColorRect = %ColorRect
-@onready var key_label: Label = %KeyLabel
+@onready var texture_rect: TextureRect = %TextureRect
 @onready var success_label: Label = %SuccsessLabel
 
+var start_time: int
 var success: bool = false
 var tween: Tween
 
+func setup(image: Texture, key: Key):
+	texture_rect.texture = image
+	keyCode = key
+
 func _ready() -> void:
-	add_to_group("QTE")
-	key_label.text = keyString
 	success_label.hide()
 	success = false
-	
-	# --- ¡IMPORTANTE! Resetea el círculo cada vez que inicia ---
 	color_rect.material.set_shader_parameter("value", 1.0)
-
-	# Iniciar animación del tiempo
+	start_time = Time.get_ticks_msec()
 	await _animation()
-
-	# Si no fue presionada la tecla, termina como fallo
 	if not success:
 		_hide_and_emit(false)
 
 func _animation() -> void:
-	# Tween para reducir el parámetro value del shader de 1 a 0 en eventDuration segundos
 	tween = create_tween()
-	tween.tween_property(
-		color_rect.material, "shader_parameter/value", 0.0, eventDuration
-	)
+	tween.tween_property(color_rect.material, "shader_parameter/value", 0.0, eventDuration)
 	await tween.finished
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_key_pressed(keyCode) and not success_label.visible:
 		success_label.show()
 		if tween:
-			tween.kill()  # Detener la animación del círculo
+			tween.kill()
 		success = true
+		var elapsed = (Time.get_ticks_msec() - start_time) / 1000.0
 		await get_tree().create_timer(displayDuration).timeout
-		_hide_and_emit(true)
+		_hide_and_emit(true, elapsed)
 
-func _hide_and_emit(success_result: bool):
+func _hide_and_emit(success_result: bool, elapsed: float = 0.0):
 	hide()
-	emit_signal("finished", success_result)
+	emit_signal("finished", success_result, elapsed)

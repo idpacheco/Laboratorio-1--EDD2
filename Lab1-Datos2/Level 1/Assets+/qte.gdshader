@@ -17,7 +17,7 @@ uniform float value: hint_range(0.0, 1.0, 0.01) = 1.0;
 
 uniform float smooth_ = 0.005;
 uniform float width_in = 0.85;
-uniform float width_out = 0.95;
+uniform float width_out = 0.98;
 uniform float border_width = 0.03;
 
 vec4 radial_progress(vec2 UV_, float VAL, float SMOOTH, float IR, float OR)
