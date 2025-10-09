@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq6yuna1imwkq"]
+
+[ext_resource type="Script" uid="uid://kxbwchoh6gxf" path="res://nivel3/scripts/memory_game.gd" id="1_nq2au"]
+[ext_resource type="Texture2D" uid="uid://blfbwkynywiij" path="res://nivel3/art/fondo.png" id="2_ceix6"]
+[ext_resource type="Texture2D" uid="uid://wt1mmam5uf51" path="res://nivel3/art/win.png" id="3_woi6i"]
+
+[node name="MemoryGame" type="Node2D"]
+script = ExtResource("1_nq2au")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_ceix6")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 104.0
+offset_top = 32.0
+offset_right = 528.0
+offset_bottom = 336.0
+color = Color(0.270222, 0.270222, 0.270222, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(128, 128)
+offset_left = 176.0
+offset_top = 88.0
+offset_right = 432.0
+offset_bottom = 230.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 248.0
+offset_top = 336.0
+offset_right = 392.0
+offset_bottom = 359.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 312.0
+offset_right = 69.0
+offset_bottom = 343.0
+text = "back"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 568.0
+offset_top = 312.0
+offset_right = 616.0
+offset_bottom = 343.0
+text = "help
+"
+
+[node name="Win" type="TextureRect" parent="."]
+visible = false
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 595.0
+offset_bottom = 268.0
+texture = ExtResource("3_woi6i")
+expand_mode = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
