@@ -3,7 +3,7 @@ var i = false
 
 func _process(delta: float) -> void:
 	if i and Input.is_action_just_pressed("E"):
-		get_tree().change_scene_to_file("res://Level 3/scenes/Aviso.tscn")
+		get_tree().change_scene_to_file("res://nivel3/scenes/inicioLevel3.tscn")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	i = true

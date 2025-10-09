@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddsbbd1veak61"]
+
+[ext_resource type="Script" uid="uid://b7ccb83dfko6j" path="res://nivel3/scripts/win.gd" id="1_itmuh"]
+[ext_resource type="Texture2D" uid="uid://blfbwkynywiij" path="res://nivel3/art/fondo.png" id="2_vrtfi"]
+[ext_resource type="Texture2D" uid="uid://wt1mmam5uf51" path="res://nivel3/art/win.png" id="3_uxghr"]
+[ext_resource type="Texture2D" uid="uid://blnx6vleo6van" path="res://Level 1/Assets+/Buttons/Continue_1.png" id="4_cvlvl"]
+[ext_resource type="Texture2D" uid="uid://db5m7nvcugngr" path="res://Level 1/Assets+/Buttons/Continue_2.png" id="5_t0nti"]
+[ext_resource type="Texture2D" uid="uid://uckimch6vdv5" path="res://Level 1/Assets+/Buttons/Continue_3.png" id="6_lv3n8"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_itmuh")
+
+[node name="fondo" type="TextureRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_vrtfi")
+expand_mode = 1
+
+[node name="Win" type="TextureRect" parent="."]
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 595.0
+offset_bottom = 268.0
+texture = ExtResource("3_uxghr")
+expand_mode = 1
+
+[node name="next" type="TextureButton" parent="."]
+offset_left = 263.0
+offset_top = 280.0
+offset_right = 365.0
+offset_bottom = 313.0
+texture_normal = ExtResource("4_cvlvl")
+texture_pressed = ExtResource("5_t0nti")
+texture_hover = ExtResource("6_lv3n8")
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
