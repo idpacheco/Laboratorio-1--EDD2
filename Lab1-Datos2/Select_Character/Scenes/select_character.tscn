@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://6fm7o11j3dxi"]
+[gd_scene load_steps=11 format=3 uid="uid://6fm7o11j3dxi"]
 
 [ext_resource type="Script" uid="uid://d0vyhy1adfyk1" path="res://Select_Character/Scripts/select_character.gd" id="1_2hqoq"]
-[ext_resource type="Texture2D" uid="uid://nn6wuj37187w" path="res://Select_Character/Assests/Background.png" id="1_jjuio"]
+[ext_resource type="Texture2D" uid="uid://nn6wuj37187w" path="res://Select_Character/Assests/background.png" id="1_jjuio"]
 [ext_resource type="Texture2D" uid="uid://bc88ey6c7o6hp" path="res://Select_Character/Assests/players/players_blue.png" id="2_2hqoq"]
 [ext_resource type="Texture2D" uid="uid://6fj6b3h8k0li" path="res://Select_Character/Assests/buttons/right_1.png" id="3_ud4ve"]
 [ext_resource type="Texture2D" uid="uid://7ui44oelco71" path="res://Select_Character/Assests/buttons/right_2.png" id="4_if017"]
 [ext_resource type="Texture2D" uid="uid://b1bewu504a517" path="res://Select_Character/Assests/buttons/left_1.png" id="5_tgi2p"]
 [ext_resource type="Texture2D" uid="uid://dhr6pvcsa7hax" path="res://Select_Character/Assests/buttons/left_2.png" id="6_p2lss"]
+[ext_resource type="Texture2D" uid="uid://bnf6chqbc5p7n" path="res://Select_Character/Assests/buttons/Save_1.png" id="8_tgi2p"]
+[ext_resource type="Texture2D" uid="uid://discqpkdwxrk4" path="res://Select_Character/Assests/buttons/Save_3.png" id="9_p2lss"]
+[ext_resource type="Texture2D" uid="uid://fwjkjrhbuoel" path="res://Select_Character/Assests/buttons/Save_2.png" id="10_ru3nu"]
 
 [node name="Select_Character" type="Control"]
 layout_mode = 3
@@ -49,8 +52,8 @@ grow_vertical = 2
 color = Color(0.180392, 0, 1, 0.482353)
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite_controler/ColorRect"]
-position = Vector2(104, 80)
-scale = Vector2(2.0125, 2.3375)
+position = Vector2(107.5, 79)
+scale = Vector2(1.5125, 2.025)
 texture = ExtResource("2_2hqoq")
 vframes = 2
 
@@ -65,6 +68,7 @@ texture_pressed = ExtResource("4_if017")
 stretch_mode = 0
 
 [node name="back" type="TextureButton" parent="sprite_controler"]
+layout_mode = 0
 offset_left = -128.0
 offset_top = 2.0
 offset_right = -104.0
@@ -89,6 +93,17 @@ popup/item_2/id = 2
 popup/item_3/text = "Grey"
 popup/item_3/id = 3
 
+[node name="SaveButton" type="TextureButton" parent="sprite_controler"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = 126.0
+offset_right = 54.0
+offset_bottom = 159.0
+texture_normal = ExtResource("8_tgi2p")
+texture_pressed = ExtResource("9_p2lss")
+texture_hover = ExtResource("10_ru3nu")
+
 [connection signal="pressed" from="sprite_controler/next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="sprite_controler/back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="sprite_controler/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="sprite_controler/SaveButton" to="." method="_on_save_button_pressed"]

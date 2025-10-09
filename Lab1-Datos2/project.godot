@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lab1-Datos2"
-run/main_scene="uid://6fm7o11j3dxi"
+run/main_scene="uid://bughfyso16oex"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="uid://d3fg3f6sn5gqo"
@@ -22,6 +22,7 @@ SceneTransitions="*res://mainMenu/Scenes/SceneTransitions.tscn"
 AudioManager="*res://mainMenu/Assets/Audio/AudioManager.tscn"
 Settings="*res://mainMenu/Scripts/Settings.gd"
 Global="*res://mainMenu/Scripts/global.gd"
+SelectedGlobal="*res://Select_Character/Scripts/selected_Global.gd"
 
 [display]
 

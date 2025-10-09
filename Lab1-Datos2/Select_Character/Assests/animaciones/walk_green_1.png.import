@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhbav7f7os75t"
-path="res://.godot/imported/npc x2.png-412571b8cf5a6147d6aefe2fdfce9421.ctex"
+uid="uid://du6bvt50aqucj"
+path="res://.godot/imported/walk_green_1.png-c4da61a1a1b64e9c14e33b6ce6455e8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Map/assets/npc x2.png"
-dest_files=["res://.godot/imported/npc x2.png-412571b8cf5a6147d6aefe2fdfce9421.ctex"]
+source_file="res://Select_Character/Assests/animaciones/walk_green_1.png"
+dest_files=["res://.godot/imported/walk_green_1.png-c4da61a1a1b64e9c14e33b6ce6455e8a.ctex"]
 
 [params]
 

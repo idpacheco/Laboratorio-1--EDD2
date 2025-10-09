@@ -26,26 +26,33 @@ var current_color_id := 0 # 0-3
 func _ready():
 	update_character_sprite()
 
+
 func _on_next_pressed() -> void:
 	current_frame = (current_frame + 1) % 2
+	SelectedGlobal.selected_character_id = current_frame
 	update_character_sprite()
 
 func _on_back_pressed() -> void:
 	current_frame = (current_frame - 1) % 2
 	if current_frame < 0:
 		current_frame = 1
+	SelectedGlobal.selected_character_id = current_frame
 	update_character_sprite()
 
 func _on_option_button_item_selected(index: int) -> void:
 	current_color_id = index
+	SelectedGlobal.selected_color_id = current_color_id
 	update_character_sprite()
 
-func update_character_sprite():
-	# Cambia la textura según el color seleccionado
-	sprite.texture = character_textures[current_color_id]
 
-	# Cambia el frame si usas AnimatedSprite2D
+func update_character_sprite():
+	sprite.texture = character_textures[current_color_id]
 	if sprite.has_method("set_frame"):
 		sprite.set_frame(current_frame)
-	# Cambia el color de ColorRect
 	color_rect.color = color_rect_colors[current_color_id]
+
+
+func _on_save_button_pressed() -> void:
+	SceneTransitions.change_scene_to_file("res://Map/scences/maps/level1_map.tscn")
+	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
+	AudioManager.SFXPlayer.play()

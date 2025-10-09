@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhbav7f7os75t"
-path="res://.godot/imported/npc x2.png-412571b8cf5a6147d6aefe2fdfce9421.ctex"
+uid="uid://discqpkdwxrk4"
+path="res://.godot/imported/Save_3.png-5fbf4d0b82367a6616f103f58bdcda8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Map/assets/npc x2.png"
-dest_files=["res://.godot/imported/npc x2.png-412571b8cf5a6147d6aefe2fdfce9421.ctex"]
+source_file="res://Select_Character/Assests/buttons/Save_3.png"
+dest_files=["res://.godot/imported/Save_3.png-5fbf4d0b82367a6616f103f58bdcda8d.ctex"]
 
 [params]
 
