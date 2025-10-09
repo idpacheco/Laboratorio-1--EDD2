@@ -24,6 +24,7 @@ func _ready():
 	_update_score()
 	_next_qte()
 
+	
 func _next_qte():
 	if game_over:
 		return
@@ -55,3 +56,10 @@ func _update_score():
 func _game_win():
 	game_over = true
 	SceneTransitions.change_scene_to_file("res://Level 1/scenes/listo.tscn")
+
+
+func _on_img_button_pressed() -> void:
+	print("SIRVE")
+	var panel = preload("res://Level 1/scenes/guia_pausa.tscn").instantiate()
+	add_child(panel)
+	get_tree().paused = true

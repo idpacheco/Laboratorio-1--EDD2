@@ -55,6 +55,7 @@ texture = ExtResource("4_7rufa")
 expand_mode = 1
 
 [node name="P" type="TextureRect" parent="img"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 84.0
 offset_right = 91.0
@@ -63,6 +64,7 @@ texture = ExtResource("5_egrie")
 expand_mode = 1
 
 [node name="S" type="TextureRect" parent="img"]
+layout_mode = 0
 offset_left = 50.0
 offset_top = 176.0
 offset_right = 90.0
@@ -71,6 +73,7 @@ texture = ExtResource("6_enpe5")
 expand_mode = 1
 
 [node name="Y" type="TextureRect" parent="img"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 171.0
 offset_right = 281.0
