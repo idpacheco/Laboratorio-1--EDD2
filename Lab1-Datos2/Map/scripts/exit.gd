@@ -5,7 +5,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 		SceneTransitions.change_scene_to_file("res://Map/scences/maps/question_map.tscn")
-
+	 	
 
 
 func _on_body_return_entered(body: Node2D) -> void:
@@ -21,4 +21,20 @@ func _on_body_return_entered(body: Node2D) -> void:
 		Global.index = Global.index+2
 	elif Global.index == 13:
 		Global.index = Global.index-2
+	elif Global.index == 0:
+		Global.index = Global.index+1
+	elif Global.index == 2:
+		Global.index = Global.index-1
+	elif Global.index == 4:
+		Global.index = Global.index+1
+	elif Global.index == 6:
+		Global.index = Global.index-1
+	elif Global.index == 8:
+		Global.index = Global.index+1
+	elif Global.index == 10:
+		Global.index = Global.index-1
+	elif Global.index == 12:
+		Global.index = Global.index+1
+	elif Global.index == 14:
+		Global.index = Global.index-1
 	SceneTransitions.change_scene_to_file("res://Map/scences/maps/question_map.tscn")

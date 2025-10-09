@@ -62,8 +62,8 @@ scale = Vector2(-3.284875, 4.471282)
 shape = SubResource("CircleShape2D_lndul")
 
 [node name="E" type="Sprite2D" parent="Area2D"]
-position = Vector2(32, 0)
-scale = Vector2(0.5592104, 0.5892857)
+position = Vector2(34.08795, 1.6751703)
+scale = Vector2(0.79120487, 0.75680274)
 texture = ExtResource("3_w7sd3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
