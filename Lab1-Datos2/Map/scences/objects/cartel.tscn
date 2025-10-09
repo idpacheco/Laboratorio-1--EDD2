@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://r3ll5p606jkt"]
 
 [ext_resource type="Texture2D" uid="uid://lxm7t21avqrg" path="res://Map/assets/tiles2/props and items x1.png" id="1_153lk"]
-[ext_resource type="Script" uid="uid://bgijhyf5dqjtt" path="res://Map/scences/cartel.gd" id="1_ke4nf"]
-[ext_resource type="Script" uid="uid://bojib72mu70tm" path="res://Map/scences/area_2d.gd" id="2_w7sd3"]
+[ext_resource type="Script" uid="uid://bgijhyf5dqjtt" path="res://Map/scripts/cartel.gd" id="1_ke4nf"]
+[ext_resource type="Script" uid="uid://bojib72mu70tm" path="res://Map/scripts/area_2d.gd" id="2_w7sd3"]
 [ext_resource type="Texture2D" uid="uid://bhfsfmdytodui" path="res://Map/assets/E.png" id="3_w7sd3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnebf"]
@@ -49,7 +49,7 @@ script = ExtResource("1_ke4nf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u4qh8")
 autoplay = "default"
-frame_progress = 0.560081
+frame_progress = 0.97322136
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpwmk1u3eg5jx"]
+
+[ext_resource type="Texture2D" uid="uid://b371xufemjcjn" path="res://Map/assets/tiles2/compu.png" id="1_eyksp"]
+[ext_resource type="Script" uid="uid://5ujx2v5e2h1y" path="res://Map/scripts/computer2.gd" id="1_xgoeg"]
+[ext_resource type="Script" uid="uid://bojib72mu70tm" path="res://Map/scripts/area_2d.gd" id="2_xgoeg"]
+[ext_resource type="Texture2D" uid="uid://bhfsfmdytodui" path="res://Map/assets/E.png" id="3_2isj3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oegm"]
+atlas = ExtResource("1_eyksp")
+region = Rect2(0, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icgrk"]
+atlas = ExtResource("1_eyksp")
+region = Rect2(32, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlama"]
+atlas = ExtResource("1_eyksp")
+region = Rect2(64, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy5wl"]
+atlas = ExtResource("1_eyksp")
+region = Rect2(96, 0, 32, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q8wam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oegm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icgrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlama")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy5wl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpd0g"]
+
+[node name="Computer" type="Node2D"]
+script = ExtResource("1_xgoeg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q8wam")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_xgoeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.9999999, 6)
+scale = Vector2(-3.284875, 4.471282)
+shape = SubResource("CircleShape2D_qpd0g")
+
+[node name="E" type="Sprite2D" parent="Area2D"]
+position = Vector2(15, -18)
+scale = Vector2(0.5592104, 0.5892857)
+texture = ExtResource("3_2isj3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
