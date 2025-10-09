@@ -2388,6 +2388,16 @@ script = ExtResource("7_6dmbl")
 position = Vector2(-8, 10)
 shape = SubResource("RectangleShape2D_wr576")
 
+[node name="return" type="Area2D" parent="."]
+position = Vector2(328, -23)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_6dmbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="return"]
+position = Vector2(-9, 403)
+shape = SubResource("RectangleShape2D_wr576")
+
 [node name="Big door" parent="." instance=ExtResource("4_wr576")]
 position = Vector2(320, 16)
 
@@ -2398,3 +2408,4 @@ position = Vector2(320, 19)
 shape = SubResource("RectangleShape2D_wr74k")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="return" to="return" method="_on_body_return_entered"]
