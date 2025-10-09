@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 SceneTransitions="*res://mainMenu/Scenes/SceneTransitions.tscn"
 AudioManager="*res://mainMenu/Assets/Audio/AudioManager.tscn"
 Settings="*res://mainMenu/Scripts/Settings.gd"
+Global="*res://mainMenu/Scripts/global.gd"
 
 [display]
 
@@ -35,6 +36,14 @@ window/stretch/scale_mode="integer"
 [dotnet]
 
 project/assembly_name="Lab1-Datos2"
+
+[input]
+
+E={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
 
 [rendering]
 

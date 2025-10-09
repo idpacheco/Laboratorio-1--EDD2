@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo8lcdp2e5nq2"]
+[gd_scene load_steps=7 format=3 uid="uid://bo8lcdp2e5nq2"]
 
+[ext_resource type="Script" uid="uid://bscj46m3hxdj2" path="res://Level 2/scenes/fin.gd" id="1_4ydb2"]
 [ext_resource type="Texture2D" uid="uid://c6laxy0ju7cxo" path="res://Level 2/assets/background.png" id="1_kykcv"]
 [ext_resource type="Texture2D" uid="uid://cvtn18i3n0qo6" path="res://Level 2/assets/done.png" id="2_ghhai"]
 [ext_resource type="Texture2D" uid="uid://b3q6njmkf4r7o" path="res://Level 2/assets/Continue_1.png" id="3_5ata6"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4ydb2")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -39,3 +41,5 @@ offset_bottom = 321.0
 texture_normal = ExtResource("3_5ata6")
 texture_pressed = ExtResource("4_hb2dg")
 texture_hover = ExtResource("5_bhdai")
+
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

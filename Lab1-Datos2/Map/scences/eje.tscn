@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://doou53as5ky4g" path="res://icon.svg" id="2_7gp3w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kd3tk"]
-radius = 36.0
+radius = 26.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 3
