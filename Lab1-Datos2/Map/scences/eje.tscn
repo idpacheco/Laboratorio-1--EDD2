@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0cxivc2i4qob"]
+[gd_scene load_steps=10 format=3 uid="uid://d0cxivc2i4qob"]
 
 [ext_resource type="Script" uid="uid://bpmbd2ih3c4au" path="res://Map/scripts/character_body_2d.gd" id="1_nqri3"]
 [ext_resource type="Texture2D" uid="uid://jqs7fpoo3gip" path="res://Select_Character/Assests/animaciones/walk_blue_1.png" id="2_8fc4h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kd3tk"]
 radius = 30.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3f7iv"]
 
 [sub_resource type="Animation" id="Animation_l8hua"]
 length = 0.001
@@ -141,9 +139,6 @@ hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kd3tk")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3f7iv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
