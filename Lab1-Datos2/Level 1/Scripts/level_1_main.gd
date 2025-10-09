@@ -65,3 +65,11 @@ func _on_img_button_pressed() -> void:
 	var panel = preload("res://Level 1/scenes/guia_pausa.tscn").instantiate()
 	add_child(panel)
 	get_tree().paused = true
+
+
+func _on_pause_button_pressed() -> void:
+	print("SIRVE")
+	SceneTransitions.change_scene_to_file("res://Level 1/scenes/guia_pausa.tscn")
+	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
+	AudioManager.SFXPlayer.play()
+	get_tree().paused = true
