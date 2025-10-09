@@ -5,4 +5,3 @@ extends Node2D
 func _process(delta: float) -> void:
 	if Global.arbol.buscar_subarbol(Global.index).dato["activado"]:
 		door.one_way_collision = true
-	print("hola")

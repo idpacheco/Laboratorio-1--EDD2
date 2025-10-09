@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjdua2qbusrf5"]
+
+[ext_resource type="Script" uid="uid://x67xx0qbps23" path="res://nivel3/scripts/card.gd" id="1_q6yj4"]
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_right = -1.0
+script = ExtResource("1_q6yj4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
