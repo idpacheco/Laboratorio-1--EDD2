@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://cf23tp7m1adgc"]
+[gd_scene load_steps=5 format=4 uid="uid://cf23tp7m1adgc"]
 
 [ext_resource type="TileSet" uid="uid://hq7fnwobye1j" path="res://Level 4/tiles/tileset/level4Tiles.tres" id="1_6j14n"]
 [ext_resource type="TileSet" uid="uid://dyxlxsnyqw3sk" path="res://Level 4/tiles/tileset/decos.tres" id="2_rbbjd"]
 [ext_resource type="PackedScene" uid="uid://b8r8hps8lwdla" path="res://Level 4/scenes/Compu.tscn" id="3_wom6i"]
+[ext_resource type="PackedScene" uid="uid://d0cxivc2i4qob" path="res://Map/scences/eje.tscn" id="4_jgg6o"]
 
 [node name="level_4" type="Node2D"]
 
@@ -30,3 +31,7 @@ position = Vector2(128, 301)
 
 [node name="Compu3" parent="." instance=ExtResource("3_wom6i")]
 position = Vector2(581, 322)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_jgg6o")]
+position = Vector2(189, 56)
+scale = Vector2(0.412531, 0.38086003)
