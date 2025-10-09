@@ -39,7 +39,9 @@ func _game_end() -> void:
 			if is_instance_valid(node): 
 				node.queue_free()
 	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://Level 2/scenes/fin.tscn")
+	SceneTransitions.change_scene_to_file("res://Level 2/scenes/fin.tscn")
+	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
+	AudioManager.SFXPlayer.play()
 
 func _on_target_target_entered() -> void:
 	onCatch = true

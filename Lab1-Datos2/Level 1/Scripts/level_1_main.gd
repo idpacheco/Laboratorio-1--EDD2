@@ -56,6 +56,8 @@ func _update_score():
 func _game_win():
 	game_over = true
 	SceneTransitions.change_scene_to_file("res://Level 1/scenes/listo.tscn")
+	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
+	AudioManager.SFXPlayer.play()
 
 
 func _on_img_button_pressed() -> void:
