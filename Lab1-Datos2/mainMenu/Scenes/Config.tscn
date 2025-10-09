@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://irllcgkr763b"]
+[gd_scene load_steps=22 format=3 uid="uid://irllcgkr763b"]
 
 [ext_resource type="Texture2D" uid="uid://b57sg4nf3c1mh" path="res://mainMenu/Assets/Images/FondoBajito.png" id="1_07mmq"]
+[ext_resource type="Script" uid="uid://bvfriqc0p2qmu" path="res://mainMenu/Scripts/config.gd" id="1_etgpq"]
 [ext_resource type="Texture2D" uid="uid://dl6gvthk50mp" path="res://mainMenu/Assets/Images/Setting menu.png" id="2_yqrne"]
 [ext_resource type="FontFile" uid="uid://d1lwwtslypfvg" path="res://mainMenu/Assets/fonts/ShareTech-Regular.ttf" id="3_n3nb4"]
 [ext_resource type="Texture2D" uid="uid://b38cqbybordso" path="res://mainMenu/Assets/Images/audio-off-icon.png" id="4_etgpq"]
@@ -12,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://c6tpa3sk2an4u" path="res://mainMenu/Assets/Images/music-on-icon.png" id="10_2aav8"]
 [ext_resource type="Texture2D" uid="uid://bjfiosp3n3r0b" path="res://mainMenu/Assets/buttons/checkOn.tres" id="11_6hsfp"]
 [ext_resource type="Texture2D" uid="uid://gq80npj5x612" path="res://mainMenu/Assets/buttons/checkOff.tres" id="12_wnki7"]
+[ext_resource type="Texture2D" uid="uid://dld71t3swgy2g" path="res://mainMenu/Assets/buttons/backNormal.tres" id="13_n3nb4"]
+[ext_resource type="Texture2D" uid="uid://d3f44v455gtux" path="res://mainMenu/Assets/buttons/backPressed.tres" id="14_etgpq"]
+[ext_resource type="Texture2D" uid="uid://1cxo43e6cnq6" path="res://mainMenu/Assets/buttons/muteOn.tres" id="16_wrbw5"]
+[ext_resource type="Texture2D" uid="uid://cr08on8hvo5r5" path="res://mainMenu/Assets/buttons/muteOff.tres" id="17_ye4so"]
+[ext_resource type="Script" uid="uid://t4k7rimdslql" path="res://mainMenu/Assets/Audio/MuteButton.gd" id="18_qa4e0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtea6"]
 texture = ExtResource("1_07mmq")
@@ -35,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_etgpq")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -195,16 +202,37 @@ offset_bottom = 231.0
 theme_override_fonts/font = ExtResource("3_n3nb4")
 text = "Pantalla completa: "
 
-[node name="PantalllaCompleta" type="CheckButton" parent="Panel/Panel2"]
+[node name="PantalllaCompleta" type="TextureButton" parent="Panel/Panel2"]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 200.0
+offset_left = 184.0
+offset_top = 208.0
 offset_right = 216.0
-offset_bottom = 234.0
-theme_override_icons/checked = ExtResource("11_6hsfp")
-theme_override_icons/unchecked = ExtResource("12_wnki7")
+offset_bottom = 226.0
+texture_normal = ExtResource("12_wnki7")
+texture_pressed = ExtResource("11_6hsfp")
 
 [node name="backButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 304.0
+offset_right = 24.0
+offset_bottom = 320.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("13_n3nb4")
+texture_pressed = ExtResource("14_etgpq")
+
+[node name="MuteButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 16.0
+offset_right = 611.0
+offset_bottom = 27.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("16_wrbw5")
+texture_pressed = ExtResource("17_ye4so")
+script = ExtResource("18_qa4e0")
+
+[connection signal="value_changed" from="Panel/Panel2/Sound_bar/Control/VBoxContainer/VolumeBar/sfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Panel/Panel2/muisc_bar/Control/VBoxContainer/VolumeBar/musicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="Panel/Panel2/PantalllaCompleta" to="." method="_on_pantallla_completa_pressed"]
+[connection signal="pressed" from="Panel/backButton" to="." method="_on_back_button_pressed"]
