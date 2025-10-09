@@ -47,6 +47,7 @@ texture_pressed = ExtResource("6_gaibg")
 texture_hover = ExtResource("7_r0fpq")
 
 [node name="MuteButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 600.0
 offset_top = 16.0
 offset_right = 611.0
