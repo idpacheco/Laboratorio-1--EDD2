@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://r3ll5p606jkt"]
+
+[ext_resource type="Texture2D" uid="uid://lxm7t21avqrg" path="res://Map/assets/tiles2/props and items x1.png" id="1_153lk"]
+[ext_resource type="Script" uid="uid://bgijhyf5dqjtt" path="res://Map/scences/cartel.gd" id="1_ke4nf"]
+[ext_resource type="Script" uid="uid://bojib72mu70tm" path="res://Map/scences/area_2d.gd" id="2_w7sd3"]
+[ext_resource type="Texture2D" uid="uid://bhfsfmdytodui" path="res://Map/assets/E.png" id="3_w7sd3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnebf"]
+atlas = ExtResource("1_153lk")
+region = Rect2(0, 128, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7sd3"]
+atlas = ExtResource("1_153lk")
+region = Rect2(64, 128, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke4nf"]
+atlas = ExtResource("1_153lk")
+region = Rect2(128, 128, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f70ia"]
+atlas = ExtResource("1_153lk")
+region = Rect2(192, 128, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4qh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnebf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7sd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke4nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f70ia")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lndul"]
+
+[node name="cartel" type="Node2D"]
+script = ExtResource("1_ke4nf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u4qh8")
+autoplay = "default"
+frame_progress = 0.560081
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_w7sd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.9999999, 6)
+scale = Vector2(-3.284875, 4.471282)
+shape = SubResource("CircleShape2D_lndul")
+
+[node name="E" type="Sprite2D" parent="Area2D"]
+position = Vector2(32, 0)
+scale = Vector2(0.5592104, 0.5892857)
+texture = ExtResource("3_w7sd3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

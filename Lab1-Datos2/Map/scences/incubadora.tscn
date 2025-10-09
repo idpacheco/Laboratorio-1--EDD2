@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx3dkkkug6ra4"]
+
+[ext_resource type="Texture2D" uid="uid://lxm7t21avqrg" path="res://Map/assets/tiles2/props and items x1.png" id="1_wkyx8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mvsc"]
+atlas = ExtResource("1_wkyx8")
+region = Rect2(0, 200, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ivwh"]
+atlas = ExtResource("1_wkyx8")
+region = Rect2(32, 200, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbmey"]
+atlas = ExtResource("1_wkyx8")
+region = Rect2(64, 200, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfp1s"]
+atlas = ExtResource("1_wkyx8")
+region = Rect2(96, 200, 32, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsuy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mvsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ivwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbmey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfp1s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="incubadora" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vsuy7")
+autoplay = "default"
+frame_progress = 0.67536587

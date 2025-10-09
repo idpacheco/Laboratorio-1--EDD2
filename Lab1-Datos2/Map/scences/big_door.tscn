@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://bmiublmdwndu5"]
+
+[ext_resource type="Texture2D" uid="uid://lxm7t21avqrg" path="res://Map/assets/tiles2/props and items x1.png" id="1_ipvra"]
+[ext_resource type="Script" uid="uid://cvrimcnmlw2gf" path="res://Map/scripts/door.gd" id="2_5twhq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5twhq"]
+atlas = ExtResource("1_ipvra")
+region = Rect2(0, 512, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqh0o"]
+atlas = ExtResource("1_ipvra")
+region = Rect2(64, 512, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hovhx"]
+atlas = ExtResource("1_ipvra")
+region = Rect2(384, 512, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e571m"]
+atlas = ExtResource("1_ipvra")
+region = Rect2(576, 512, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x2ms"]
+atlas = ExtResource("1_ipvra")
+region = Rect2(640, 512, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vying"]
+atlas = ExtResource("1_ipvra")
+region = Rect2(704, 512, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6p0uc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5twhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqh0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hovhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e571m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x2ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vying")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqh0o"]
+radius = 8.055554
+
+[node name="Big door" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6p0uc")
+animation = &"open"
+script = ExtResource("2_5twhq")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+scale = Vector2(3.6000006, 2.3200004)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+scale = Vector2(1.3222224, 2.6724133)
+shape = SubResource("CircleShape2D_hqh0o")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_exited"]
