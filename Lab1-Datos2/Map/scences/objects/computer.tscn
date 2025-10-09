@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpwmk1u3eg5jx"]
+[gd_scene load_steps=12 format=3 uid="uid://dpwmk1u3eg5jx"]
 
 [ext_resource type="Texture2D" uid="uid://b371xufemjcjn" path="res://Map/assets/tiles2/compu.png" id="1_eyksp"]
 [ext_resource type="Script" uid="uid://5ujx2v5e2h1y" path="res://Map/scripts/level2.gd" id="1_xgoeg"]
@@ -41,6 +41,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgoeg"]
+size = Vector2(24, 13)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_qpd0g"]
 
 [node name="Computer" type="Node2D"]
@@ -49,6 +52,12 @@ script = ExtResource("1_xgoeg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q8wam")
 autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_xgoeg")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
