@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://b8ba0ih1tumm2"]
 
 [ext_resource type="Texture2D" uid="uid://dcry181iwvmsx" path="res://Map/assets/tiles2/tileset x1.png" id="1_gvhjg"]
-[ext_resource type="Script" uid="uid://rsdersmclu7h" path="res://Map/scences/maps/level_1_map.gd" id="1_q7pff"]
+[ext_resource type="Script" uid="uid://rsdersmclu7h" path="res://Map/scripts/level_1_map.gd" id="1_q7pff"]
 [ext_resource type="TileSet" uid="uid://hq7fnwobye1j" path="res://Level 4/tiles/tileset/level4Tiles.tres" id="3_jpwqv"]
 [ext_resource type="PackedScene" uid="uid://bx3dkkkug6ra4" path="res://Map/scences/objects/incubadora.tscn" id="4_c2q2h"]
 [ext_resource type="Texture2D" uid="uid://lxm7t21avqrg" path="res://Map/assets/tiles2/props and items x1.png" id="5_q7pff"]

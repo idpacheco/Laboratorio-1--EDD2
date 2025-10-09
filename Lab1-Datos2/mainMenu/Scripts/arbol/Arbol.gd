@@ -49,3 +49,10 @@ func _buscar_recursivo(nodo2: Nodo, valor: int) -> Nodo:
 		return _buscar_recursivo(nodo2.izq, valor)
 	else:
 		return _buscar_recursivo(nodo2.der, valor)
+func cambiar_estado(valor: int, nuevo_bool: bool) -> bool:
+	var nodo = buscar_subarbol(valor)
+	if nodo == null:
+		return false  
+
+	nodo.dato["activado"] = nuevo_bool
+	return true 
