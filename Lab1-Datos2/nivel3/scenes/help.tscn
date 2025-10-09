@@ -1,50 +1,58 @@
-[gd_scene load_steps=9 format=3 uid="uid://3swyb0due6j0"]
+[gd_scene load_steps=8 format=3 uid="uid://3swyb0due6j0"]
 
 [ext_resource type="Script" uid="uid://bkw6glm3ike3j" path="res://nivel3/scripts/help.gd" id="1_4drs0"]
+[ext_resource type="Texture2D" uid="uid://blfbwkynywiij" path="res://nivel3/art/fondo.png" id="2_dgjkf"]
 [ext_resource type="Texture2D" uid="uid://cmp4obdw6bmow" path="res://nivel3/art/help_1.png" id="2_eqs3t"]
 [ext_resource type="Texture2D" uid="uid://blnx6vleo6van" path="res://Level 1/Assets+/Buttons/Continue_1.png" id="3_f0kmf"]
 [ext_resource type="Texture2D" uid="uid://ctnqhetnyrmbl" path="res://nivel3/art/help_2.png" id="3_gi4ue"]
 [ext_resource type="Texture2D" uid="uid://db5m7nvcugngr" path="res://Level 1/Assets+/Buttons/Continue_2.png" id="4_4m430"]
 [ext_resource type="Texture2D" uid="uid://uckimch6vdv5" path="res://Level 1/Assets+/Buttons/Continue_3.png" id="5_oqvvx"]
-[ext_resource type="Texture2D" uid="uid://ctrl8rk2g1g2p" path="res://Level 1/Assets+/Buttons/back_1.png" id="7_fprgj"]
-[ext_resource type="Texture2D" uid="uid://dvsfcx047n78a" path="res://Level 1/Assets+/Buttons/back_2.png" id="8_fi8ha"]
 
-[node name="Help" type="Node2D"]
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_4drs0")
 
-[node name="help1" type="TextureRect" parent="."]
+[node name="fondo" type="TextureRect" parent="."]
 offset_right = 640.0
 offset_bottom = 360.0
+texture = ExtResource("2_dgjkf")
+expand_mode = 1
+
+[node name="help1" type="TextureRect" parent="."]
+offset_left = 75.0
+offset_top = 56.0
+offset_right = 566.0
+offset_bottom = 291.0
 texture = ExtResource("2_eqs3t")
 expand_mode = 1
 
 [node name="next" type="TextureButton" parent="help1"]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 22.0
-offset_right = 625.0
-offset_bottom = 55.0
+offset_left = 187.0
+offset_top = 247.0
+offset_right = 289.0
+offset_bottom = 280.0
 texture_normal = ExtResource("3_f0kmf")
 texture_pressed = ExtResource("4_4m430")
 texture_hover = ExtResource("5_oqvvx")
 
 [node name="help2" type="TextureRect" parent="."]
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 642.0
-offset_bottom = 363.0
+offset_left = 75.0
+offset_top = 57.0
+offset_right = 567.0
+offset_bottom = 292.0
 texture = ExtResource("3_gi4ue")
 expand_mode = 1
 
-[node name="back" type="TextureButton" parent="help2"]
-layout_mode = 0
-offset_left = 588.0
-offset_top = 311.0
-offset_right = 622.0
-offset_bottom = 345.0
-texture_normal = ExtResource("7_fprgj")
-texture_pressed = ExtResource("8_fi8ha")
-stretch_mode = 0
+[node name="next2" type="TextureButton" parent="help2"]
+offset_left = 186.0
+offset_top = 248.0
+offset_right = 288.0
+offset_bottom = 281.0
+texture_normal = ExtResource("3_f0kmf")
+texture_pressed = ExtResource("4_4m430")
+texture_hover = ExtResource("5_oqvvx")
 
 [connection signal="pressed" from="help1/next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="help2/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="help2/next2" to="." method="_on_next_2_pressed"]

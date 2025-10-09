@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhbav7f7os75t"
-path="res://.godot/imported/npc x2.png-412571b8cf5a6147d6aefe2fdfce9421.ctex"
+uid="uid://gtjpeei3yb7v"
+path="res://.godot/imported/aviso.png-ec61b23b3352a4968b906d132f88af22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Map/assets/npc x2.png"
-dest_files=["res://.godot/imported/npc x2.png-412571b8cf5a6147d6aefe2fdfce9421.ctex"]
+source_file="res://nivel3/art/aviso.png"
+dest_files=["res://.godot/imported/aviso.png-ec61b23b3352a4968b906d132f88af22.ctex"]
 
 [params]
 

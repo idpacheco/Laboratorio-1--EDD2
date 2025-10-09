@@ -3,7 +3,6 @@ extends Node2D
 @onready var grid = $GridContainer
 @onready var timer = $Timer
 @onready var label = $Label
-@onready var ganaste = $Win
 
 
 var primera_carta = null
@@ -22,7 +21,6 @@ var pares = [
 ]
 
 func _ready():
-	ganaste.visible = false
 	inicializar_cartas()
 	timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
 
@@ -69,7 +67,8 @@ func verificar_pareja():
 		bloqueo = false
 
 		if pares_encontrados == pares.size():
-			ganaste.visible = true
+			SceneTransitions.change_scene_to_file("res://nivel3/scenes/win.tscn")
+		
 	else:
 		label.text = "❌ No coinciden..."
 		timer.start(1.0)
