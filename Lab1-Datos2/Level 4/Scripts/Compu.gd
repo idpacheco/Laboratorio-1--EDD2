@@ -20,7 +20,7 @@ func toggle_lever():
 		return
 	is_on = true
 	activar_minijuego()
-	print("Palanca activada:", is_on)
+	print("Palanca activada:", is_on, lever_id)
 
 
 func activar_minijuego():
