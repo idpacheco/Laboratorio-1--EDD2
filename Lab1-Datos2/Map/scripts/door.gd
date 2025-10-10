@@ -4,9 +4,11 @@ extends AnimatedSprite2D
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-			door.play("open")
+	if Global.arbol.buscar_subarbol(Global.index).dato["activado"]:
+		door.play("open")
 
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	door.play_backwards("open")
+	if Global.arbol.buscar_subarbol(Global.index).dato["activado"]:
+		door.play_backwards("open")

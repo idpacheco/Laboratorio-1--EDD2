@@ -30,11 +30,9 @@ func agregar_recursivo(nodo: Nodo, nuevo_nodo: Nodo) -> void:
 		else:
 			agregar_recursivo(nodo.der, nuevo_nodo)
 func buscar_subarbol(valor: int) -> Nodo:
-	print(raiz.dato["valor"])
 	return _buscar_recursivo(raiz, valor)
 
 func _buscar_recursivo(nodo2: Nodo, valor: int) -> Nodo:
-	print(nodo2)
 	if nodo2 == null:
 		
 		return null

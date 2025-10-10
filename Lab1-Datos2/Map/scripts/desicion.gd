@@ -1,11 +1,17 @@
 extends Node2D
 @onready var label: Label = $Label
 @onready var label_2: Label = $Label2
+@onready var opcion_a: Label = $question/opcionA
+@onready var opcion_b: Label = $question/opcionB
+@onready var pregunta: Label = $question/pregunta
 
 func _ready() -> void:
 	label.text = str(Global.arbol.buscar_subarbol(Global.index).izq.dato["valor"])
 	label_2.text = str(Global.arbol.buscar_subarbol(Global.index).der.dato["valor"])
-
+	pregunta.text = Global.arbol.buscar_subarbol(Global.index).dato["pregunta"]
+	opcion_a.text = label.text+". "+Global.arbol.buscar_subarbol(Global.index).dato["opciones"][0]
+	opcion_b.text = label_2.text+". "+Global.arbol.buscar_subarbol(Global.index).dato["opciones"][1]
+	
 func _on_exit_1_body_entered(body: Node2D) -> void:
 	if Global.index == 7:
 		Global.index = Global.index-4

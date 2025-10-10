@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddsbbd1veak61"]
+[gd_scene load_steps=7 format=3 uid="uid://c0aao37q8jlru"]
 
 [ext_resource type="Script" uid="uid://b7ccb83dfko6j" path="res://nivel3/scripts/win.gd" id="1_itmuh"]
 [ext_resource type="Texture2D" uid="uid://blfbwkynywiij" path="res://nivel3/art/fondo.png" id="2_vrtfi"]
@@ -13,12 +13,14 @@ anchors_preset = 0
 script = ExtResource("1_itmuh")
 
 [node name="fondo" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("2_vrtfi")
 expand_mode = 1
 
 [node name="Win" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 96.0
 offset_right = 595.0
@@ -27,6 +29,7 @@ texture = ExtResource("3_uxghr")
 expand_mode = 1
 
 [node name="next" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 263.0
 offset_top = 280.0
 offset_right = 365.0
