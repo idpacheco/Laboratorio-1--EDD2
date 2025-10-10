@@ -15,6 +15,7 @@ const IMAGE_KEYS = [
 @export var fast_time := 0.5
 
 @onready var score_label: Label = %ScoreLabel
+@onready var pause_panel = preload("res://Level 1/scenes/guia_pausa.tscn").instantiate()
 var score: int = 0
 var game_over: bool = false
 
@@ -23,6 +24,8 @@ func _ready():
 	game_over = false
 	_update_score()
 	_next_qte()
+	add_child(pause_panel)
+	pause_panel.visible = false
 
 	
 func _next_qte():
@@ -59,17 +62,19 @@ func _game_win():
 	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
 	AudioManager.SFXPlayer.play()
 
-
 func _on_img_button_pressed() -> void:
-	print("SIRVE")
-	var panel = preload("res://Level 1/scenes/guia_pausa.tscn").instantiate()
-	add_child(panel)
-	get_tree().paused = true
+	if get_tree().paused:
+		get_tree().paused = false
+		pause_panel.visible = false
+	else:
+		get_tree().paused = true
+		pause_panel.visible = true
+
+	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
+	AudioManager.SFXPlayer.play()
 
 
 func _on_pause_button_pressed() -> void:
-	print("SIRVE")
-	SceneTransitions.change_scene_to_file("res://Level 1/scenes/guia_pausa.tscn")
 	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
 	AudioManager.SFXPlayer.play()
-	get_tree().paused = true
+	get_tree().paused = !get_tree().paused # Cambia entre pausa y no pausa
