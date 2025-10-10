@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bpmbd2ih3c4au" path="res://Map/scripts/character_body_2d.gd" id="1_nqri3"]
 [ext_resource type="Texture2D" uid="uid://jqs7fpoo3gip" path="res://Select_Character/Assests/animaciones/walk_blue_1.png" id="2_8fc4h"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kd3tk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8fc4h"]
 radius = 30.0
 
 [sub_resource type="Animation" id="Animation_l8hua"]
@@ -132,13 +132,14 @@ collision_mask = 3
 script = ExtResource("1_nqri3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
+position = Vector2(-0.500002, -0.5)
+scale = Vector2(2, 2.028)
 texture = ExtResource("2_8fc4h")
 flip_h = true
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_kd3tk")
+shape = SubResource("CircleShape2D_8fc4h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

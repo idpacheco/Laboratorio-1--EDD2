@@ -52,8 +52,8 @@ grow_vertical = 2
 color = Color(0.180392, 0, 1, 0.482353)
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite_controler/ColorRect"]
-position = Vector2(107.5, 79)
-scale = Vector2(1.5125, 2.025)
+position = Vector2(106, 76)
+scale = Vector2(1.74375, 2.0625)
 texture = ExtResource("2_2hqoq")
 vframes = 2
 

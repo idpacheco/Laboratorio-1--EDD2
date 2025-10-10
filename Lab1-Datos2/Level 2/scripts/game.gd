@@ -48,3 +48,8 @@ func _on_target_target_entered() -> void:
 
 func _on_target_target_exited() -> void:
 	onCatch = false
+
+func _on_pause_button_pressed() -> void:
+	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
+	AudioManager.SFXPlayer.play()
+	get_tree().paused = !get_tree().paused # Cambia entre pausa y no pausa

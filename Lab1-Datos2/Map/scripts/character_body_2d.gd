@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Movement speed in pixels per second
-@export var speed: float = 200.0
+@export var speed: float = 100.0
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
@@ -20,7 +20,9 @@ var character_textures = [
 		preload("res://Select_Character/Assests/animaciones/walk_grey_1.png"),   # Gris
 	]
 ]
-var last_direction := "right"
+
+var last_direction = Vector2.ZERO
+
 
 func _ready():
 	var character_id =SelectedGlobal.selected_character_id
@@ -28,39 +30,42 @@ func _ready():
 	sprite.texture = character_textures[character_id][color_id]
 	animation_player.play("idle_right")
 	
-func _physics_process(delta):
-	var direction := Vector2.ZERO
+func _physics_process(_delta):
+	var direction = Vector2.ZERO
+	direction.x = Input.get_axis("ui_left", "ui_right")
+	direction.y = Input.get_axis("ui_up", "ui_down")
 	
-	if Input.is_action_pressed("ui_right"):
-		direction.x += 1
-	if Input.is_action_pressed("ui_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		direction.y += 1
-	if Input.is_action_pressed("ui_up"):
-		direction.y -= 1
-
-	# Normaliza para evitar velocidad diagonal extra
-	if direction != Vector2.ZERO:
-		direction = direction.normalized()
-		velocity = direction * 200.0
-		move_and_slide()
-
-		# Animación WALK según dirección
-		if direction.x > 0:
-			animation_player.play("walk_right")
-			last_direction = "right"
-		elif direction.x < 0:
-			animation_player.play("walk_left")
-			last_direction = "left"
-		elif direction.y != 0:
-			# Si camina arriba/abajo, conserva la última dirección horizontal
-			animation_player.play("walk_" + last_direction)
+	if direction.x != 0:
+		velocity.x = direction.x * speed
 	else:
-		velocity = Vector2.ZERO
-		# Animación IDLE según última dirección
-		animation_player.play("idle_" + last_direction)
+		velocity.x = move_toward(velocity.x, 0, speed )
+
+	if direction.y != 0:
+		velocity.y = direction.y * speed
+	else:
+		velocity.y = move_toward(velocity.y, 0, speed )
+
+	if direction != Vector2.ZERO:
+		last_direction = direction.normalized()
+
+	var anim_to_play = ""
+
+	if direction == Vector2.ZERO:
+	# Si está quieto, usa la última dirección horizontal
+		anim_to_play = "idle_left" if last_direction.x < 0 else "idle_right"
+	else:
+	# Si se mueve, prioriza la dirección horizontal.
+		if abs(direction.x) >= abs(direction.y):
+			anim_to_play = "walk_left" if direction.x < 0 else "walk_right"
+		else:
+		# Si el movimiento es principalmente vertical, usa la última dirección horizontal
+			anim_to_play = "walk_left" if last_direction.x < 0 else "walk_right"
+
+	if animation_player.current_animation != anim_to_play:
+		animation_player.play(anim_to_play)
+
+	move_and_slide()
 	
 	
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	pass # Replace with function body.

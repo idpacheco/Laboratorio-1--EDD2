@@ -10,6 +10,7 @@
 
 [node name="Level1_Main" type="Control"]
 layout_mode = 3
+anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 318.0
