@@ -216,7 +216,7 @@ func _process(delta):
 	label_tiempo.text = "Tiempo: " + str(round(timer.time_left)) + "s"
 
 func _on_boton_salir_pressed() -> void:
-	SceneTransitions.change_scene_to_file("res://level3/Scenes/level_3.tscn")
+	SceneTransitions.change_scene_to_file("res://Level 4/scenes/level_4.tscn")
 
 func _on_timer_timeout() -> void:
 	print("¡Timer timeout ejecutado!")

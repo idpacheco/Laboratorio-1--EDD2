@@ -1,17 +1,31 @@
-[gd_scene load_steps=8 format=4 uid="uid://cf23tp7m1adgc"]
+[gd_scene load_steps=19 format=4 uid="uid://cf23tp7m1adgc"]
 
 [ext_resource type="TileSet" uid="uid://hq7fnwobye1j" path="res://Level 4/tiles/tileset/level4Tiles.tres" id="1_6j14n"]
+[ext_resource type="Script" uid="uid://diufqeqbkrjvs" path="res://Level 4/scenes/level_4.gd" id="1_u1ssn"]
 [ext_resource type="TileSet" uid="uid://dyxlxsnyqw3sk" path="res://Level 4/tiles/tileset/decos.tres" id="2_rbbjd"]
 [ext_resource type="Texture2D" uid="uid://dpuydrcujraub" path="res://Level 4/Assets/20250603_0100_Glowing White Orb_simple_compose_01jwt602rme1g8cyajrzk17vt9.png" id="4_am3jy"]
 [ext_resource type="PackedScene" uid="uid://d0cxivc2i4qob" path="res://Map/scences/eje.tscn" id="4_jgg6o"]
 [ext_resource type="Script" uid="uid://ocnaclp8gxeg" path="res://Level 4/Scripts/Compu.gd" id="5_am3jy"]
 [ext_resource type="PackedScene" uid="uid://dpwmk1u3eg5jx" path="res://Map/scences/objects/computer.tscn" id="5_fvxnj"]
+[ext_resource type="Script" uid="uid://cdbn4570hhh2c" path="res://Level 4/scenes/hud.gd" id="8_wi3s8"]
+[ext_resource type="Texture2D" uid="uid://cbedvr17xr0ue" path="res://Level 4/Assets/textures/mecanicaButton.tres" id="9_t5oth"]
+[ext_resource type="Texture2D" uid="uid://cgav4w0okrej0" path="res://Level 4/Assets/textures/mecanicaButtonOff.tres" id="10_heplt"]
+[ext_resource type="Texture2D" uid="uid://ds1gh6et8rjkn" path="res://Level 4/Assets/textures/EnergyFull.tres" id="11_kqcub"]
+[ext_resource type="FontFile" uid="uid://d1lwwtslypfvg" path="res://mainMenu/Assets/fonts/ShareTech-Regular.ttf" id="12_lev6k"]
+[ext_resource type="Texture2D" uid="uid://cdgdrf58lqdhf" path="res://Level 4/Assets/textures/EneergyEmpty.tres" id="13_72xug"]
+[ext_resource type="Texture2D" uid="uid://dil3rvqlnj0l3" path="res://Level 4/Assets/QUICK CODE.png" id="14_7687g"]
+[ext_resource type="Texture2D" uid="uid://dy7poahnnhiit" path="res://Level 4/Assets/textures/reintentarNormal.tres" id="15_vf5ab"]
+[ext_resource type="Texture2D" uid="uid://cqx4i4i0fo4nd" path="res://Level 4/Assets/textures/reintentarPressed.tres" id="16_nthgp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1fgk"]
+texture = ExtResource("14_7687g")
 
 [sub_resource type="Environment" id="Environment_am3jy"]
 ambient_light_source = 2
 ambient_light_energy = 0.0
 
 [node name="level_4" type="Node2D"]
+script = ExtResource("1_u1ssn")
 
 [node name="fondo" type="TileMapLayer" parent="."]
 modulate = Color(0.344076, 0.344076, 0.344076, 1)
@@ -52,14 +66,108 @@ texture = ExtResource("4_am3jy")
 [node name="Computer" parent="." instance=ExtResource("5_fvxnj")]
 position = Vector2(120, 43)
 script = ExtResource("5_am3jy")
+lever_id = 0
 
 [node name="Computer2" parent="." instance=ExtResource("5_fvxnj")]
 position = Vector2(578, 292)
 script = ExtResource("5_am3jy")
+lever_id = 0
 
 [node name="Computer3" parent="." instance=ExtResource("5_fvxnj")]
 position = Vector2(497, 39)
 script = ExtResource("5_am3jy")
+lever_id = 0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("8_wi3s8")
+
+[node name="mecanica3Button" type="TextureButton" parent="HUD"]
+offset_left = 8.0
+offset_top = 319.0
+offset_right = 48.0
+offset_bottom = 359.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("9_t5oth")
+texture_pressed = ExtResource("10_heplt")
+texture_hover = ExtResource("10_heplt")
+
+[node name="PuntajeRect" type="TextureRect" parent="HUD"]
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 39.0
+offset_bottom = 44.0
+texture = ExtResource("11_kqcub")
+
+[node name="PuntajeLabel" type="Label" parent="HUD"]
+offset_left = 46.0
+offset_top = 12.0
+offset_right = 91.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("12_lev6k")
+
+[node name="PalancasContainer" type="HBoxContainer" parent="HUD"]
+offset_left = 552.0
+offset_top = 7.0
+offset_right = 595.0
+offset_bottom = 31.0
+scale = Vector2(2, 2)
+
+[node name="Energy1" type="TextureRect" parent="HUD/PalancasContainer"]
+layout_mode = 2
+texture = ExtResource("13_72xug")
+
+[node name="Energy2" type="TextureRect" parent="HUD/PalancasContainer"]
+layout_mode = 2
+texture = ExtResource("13_72xug")
+
+[node name="Energy3" type="TextureRect" parent="HUD/PalancasContainer"]
+layout_mode = 2
+texture = ExtResource("13_72xug")
+
+[node name="Panel2" type="Panel" parent="HUD"]
+visible = false
+offset_right = 639.0
+offset_bottom = 357.0
+
+[node name="PanelFinal" type="Panel" parent="HUD/Panel2"]
+modulate = Color(5.53504e-07, 0.520078, 0.240303, 1)
+layout_mode = 0
+offset_left = 153.0
+offset_top = 85.0
+offset_right = 499.0
+offset_bottom = 289.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_a1fgk")
+
+[node name="Panel" type="Panel" parent="HUD/Panel2/PanelFinal"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 49.0
+offset_right = 308.0
+offset_bottom = 186.0
+
+[node name="PuntajeFinal" type="Label" parent="HUD/Panel2/PanelFinal/Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 14.0
+offset_right = 233.0
+offset_bottom = 57.0
+
+[node name="MensajeLabel" type="Label" parent="HUD/Panel2/PanelFinal/Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 61.0
+offset_right = 224.0
+offset_bottom = 113.0
+
+[node name="ReintentarButton" type="TextureButton" parent="HUD/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("15_vf5ab")
+texture_pressed = ExtResource("16_nthgp")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_am3jy")
+
+[connection signal="pressed" from="HUD/mecanica3Button" to="HUD" method="_on_mecanica_3_button_pressed"]
+[connection signal="pressed" from="HUD/Panel2/ReintentarButton" to="HUD" method="_on_reintentar_button_pressed"]
