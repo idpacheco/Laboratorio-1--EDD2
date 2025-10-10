@@ -7,6 +7,8 @@ extends CanvasLayer
 @onready var mensaje_label = $Panel2/PanelFinal/Panel/MensajeLabel
 @onready var puntaje_final_label = $Panel2/PanelFinal/Panel/PuntajeFinal
 #@onready var atrasMundo = $atrasMundo
+@onready var door: CollisionShape2D = $"../door/StaticBody2D/CollisionShape2D"
+@onready var next_to_game: TextureButton = $Panel2/Next_to_game
 @onready var reintentar_button = $Panel2/ReintentarButton
 @onready var stars = [
 	$PalancasContainer/Energy1,
@@ -41,11 +43,12 @@ func mostrar_resultado_finalPanel():
 	if GameState.puntaje_total >= 1000:
 		mensaje_label.text = "¡Has restaurado el sistema y eliminado la amenaza de los virus!"
 		reintentar_button.visible = false
-		
+		next_to_game.visible = true
 		
 	else:
 		mensaje_label.text = "¡El sistema fue restaurado, pero la protección no fue suficiente contra los virus!"
 		reintentar_button.visible = true
+		next_to_game.visible = false
 	#atrasMundo.visible=true
 	
 func actualizar_palancas_visual():
@@ -74,4 +77,14 @@ func _on_reintentar_button_pressed() -> void:
 	panel_final.visible = false
 	GameState.reset()
 	get_tree().reload_current_scene()
+	pass # Replace with function body.
+
+
+func _on_next_to_game_pressed() -> void:
+	if Global.index != 12:
+		Global.arbol.cambiar_estado(Global.index,true)
+		door.one_way_collision = true
+		panel_final.visible = false
+		print("Escogiste una puerta erronea intenta con otra ruta")
+		
 	pass # Replace with function body.
