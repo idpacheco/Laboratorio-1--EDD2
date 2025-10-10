@@ -34,4 +34,4 @@ position = Vector2(581, 322)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_jgg6o")]
 position = Vector2(189, 56)
-scale = Vector2(0.412531, 0.38086003)
+scale = Vector2(0.412531, 0.38086)

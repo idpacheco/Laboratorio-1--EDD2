@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ljksh5rgvidp"]
+
+[ext_resource type="Texture2D" uid="uid://du858mevl4rw7" path="res://Level 4/Assets/cables (5).png" id="1_e2jfp"]
+
+
+[resource]
+atlas = ExtResource("1_e2jfp")
+region = Rect2(41.7891, 3.98509, 89.8032, 13.3422)

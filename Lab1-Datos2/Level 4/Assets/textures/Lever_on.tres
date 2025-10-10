@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://db6bj1cci70vp"]
+
+[ext_resource type="Texture2D" uid="uid://bsfn4s850pcgs" path="res://Level 4/Assets/pixilart-sprite - Kopi.png" id="1_dpx7f"]
+
+
+[resource]
+atlas = ExtResource("1_dpx7f")
+region = Rect2(280, 8, 16, 48)
