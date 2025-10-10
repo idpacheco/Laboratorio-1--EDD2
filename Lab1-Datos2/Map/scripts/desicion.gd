@@ -6,6 +6,7 @@ extends Node2D
 @onready var pregunta: Label = $question/pregunta
 
 func _ready() -> void:
+	print(Global.index)
 	label.text = str(Global.arbol.buscar_subarbol(Global.index).izq.dato["valor"])
 	label_2.text = str(Global.arbol.buscar_subarbol(Global.index).der.dato["valor"])
 	pregunta.text = Global.arbol.buscar_subarbol(Global.index).dato["pregunta"]
