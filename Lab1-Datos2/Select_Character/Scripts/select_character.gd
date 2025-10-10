@@ -53,6 +53,7 @@ func update_character_sprite():
 
 
 func _on_save_button_pressed() -> void:
-	SceneTransitions.change_scene_to_file("res://Map/scences/maps/level1_map.tscn")
+	#SceneTransitions.change_scene_to_file("res://Map/scences/maps/level1_map.tscn")
+	SceneTransitions.change_scene_to_file("res://Level 4/scenes/level_4.tscn")
 	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
 	AudioManager.SFXPlayer.play()

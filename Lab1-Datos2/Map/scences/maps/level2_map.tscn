@@ -1447,7 +1447,7 @@ texture = ExtResource("1_awpk5")
 41:25/0 = 0
 42:25/0 = 0
 43:25/0 = 0
-43:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.8777409, 8, 3.057598, 8, 8, -8, 8)
+43:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.87774, 8, 3.0576, 8, 8, -8, 8)
 44:25/0 = 0
 45:25/0 = 0
 46:25/0 = 0
@@ -2376,7 +2376,7 @@ position = Vector2(320, 166)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_wr74k")]
 position = Vector2(318, 308)
-scale = Vector2(0.41397426, 0.37621424)
+scale = Vector2(0.413974, 0.376214)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(328, -23)

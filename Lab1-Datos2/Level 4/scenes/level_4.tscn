@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://cf23tp7m1adgc"]
+[gd_scene load_steps=6 format=4 uid="uid://cf23tp7m1adgc"]
 
 [ext_resource type="TileSet" uid="uid://hq7fnwobye1j" path="res://Level 4/tiles/tileset/level4Tiles.tres" id="1_6j14n"]
 [ext_resource type="TileSet" uid="uid://dyxlxsnyqw3sk" path="res://Level 4/tiles/tileset/decos.tres" id="2_rbbjd"]
-[ext_resource type="PackedScene" uid="uid://b8r8hps8lwdla" path="res://Level 4/scenes/Compu.tscn" id="3_wom6i"]
 [ext_resource type="PackedScene" uid="uid://d0cxivc2i4qob" path="res://Map/scences/eje.tscn" id="4_jgg6o"]
+[ext_resource type="Script" uid="uid://ocnaclp8gxeg" path="res://Level 4/Scripts/Compu.gd" id="5_am3jy"]
+[ext_resource type="PackedScene" uid="uid://dpwmk1u3eg5jx" path="res://Map/scences/objects/computer.tscn" id="5_fvxnj"]
 
 [node name="level_4" type="Node2D"]
 
@@ -23,15 +24,22 @@ tile_set = ExtResource("1_6j14n")
 tile_map_data = PackedByteArray("AAAIAAUAAAAAAAwAAAAkAAoAAAAAAAwAAAAmAAEAAAAAAAwAAAASAAEAAAAAABAAAAAbAAcAAAAAABAAAAAeABEAAAAAABAAAAANABMAAAAAABAAAAAHABIAAAAAAAIAAAAJAAYAAAAAAAIAAAATAAIAAAAAAAIAAAAUAAsAAAACAAIAAAASABIAAAACAAIAAAALAAMAAAACAAIAAAALAAAAAAAAACoAAAALAAEAAAAAACsAAAAMAAAAAAABACoAAAAMAAEAAAABACsAAAAbAAwAAAAOAAAAAAAmAAkAAAAOAAAAAAABAAgAAAAOAAAAAAAVABIAAAAGAAIAAAANAA4AAAAZABEAAAATAAsAAAAWABEAAAAKAAYAAAAWABEAAAAYAAIAAAAIAAIAAAAEAAAAAAAAAAgAAAAhAAAAAAAAAAgAAAAeAAgAAAAAAAgAAAAQAAwAAAAAAAgAAAABABQAAAAIAAIAAAAGAAoAAAAAAAIAAAABAA8AAAACAAIAAAAlAAwAAAAIAAIAAAABAAIAAAAYABEAAAAAAAcAAAAYABEAAAAQAAIAAAAYABEAAAAQAAYAAAAYABEAAAAcAAIAAAAYABEAAAAdAAcAAAAYABEAAAAcABIAAAAWABEAAAABABMAAAAWABEAAAAIABQAAAAWABEAAAAMAA4AAAAGAAIAAAABAAoAAAAAAAwAAAA=")
 tile_set = ExtResource("2_rbbjd")
 
-[node name="Compu" parent="." instance=ExtResource("3_wom6i")]
-position = Vector2(127, 40)
-
-[node name="Compu2" parent="." instance=ExtResource("3_wom6i")]
-position = Vector2(128, 301)
-
-[node name="Compu3" parent="." instance=ExtResource("3_wom6i")]
-position = Vector2(581, 322)
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_jgg6o")]
-position = Vector2(189, 56)
-scale = Vector2(0.412531, 0.38086)
+position = Vector2(189, 52)
+scale = Vector2(0.3, 0.278)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, 2)
+zoom = Vector2(5, 5)
+
+[node name="Computer" parent="." instance=ExtResource("5_fvxnj")]
+position = Vector2(120, 43)
+script = ExtResource("5_am3jy")
+
+[node name="Computer2" parent="." instance=ExtResource("5_fvxnj")]
+position = Vector2(578, 292)
+script = ExtResource("5_am3jy")
+
+[node name="Computer3" parent="." instance=ExtResource("5_fvxnj")]
+position = Vector2(497, 39)
+script = ExtResource("5_am3jy")

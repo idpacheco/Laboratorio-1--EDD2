@@ -33,7 +33,6 @@ var errores_previos: Dictionary = {}
 var conexiones_realizadas: Dictionary = {}
 
 func _ready():
-	
 	lever_id = GameState.current_lever_id
 	texturas_por_color_y_lado = {
 		"Rojo": {
