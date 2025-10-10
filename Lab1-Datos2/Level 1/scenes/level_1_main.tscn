@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnafsfnoi01hx"]
+[gd_scene load_steps=8 format=3 uid="uid://dnafsfnoi01hx"]
 
 [ext_resource type="Script" uid="uid://dvpw3ujikdale" path="res://Level 1/Scripts/level_1_main.gd" id="1_uecuo"]
 [ext_resource type="Texture2D" uid="uid://snd6h6t0g5je" path="res://Level 1/Assets+/background.png" id="2_6iebh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dijvswi4bxfg0" path="res://Level 1/Assets+/Buttons/lupa_2.png" id="4_o8prn"]
 [ext_resource type="Texture2D" uid="uid://cj6gx4sijmjob" path="res://Level 1/Assets+/Buttons/pause_1.png" id="5_cryc4"]
 [ext_resource type="Texture2D" uid="uid://cy7xka4wj23re" path="res://Level 1/Assets+/Buttons/pause_2.png" id="6_fjtmi"]
+[ext_resource type="PackedScene" uid="uid://bn3c5kk2qgjj5" path="res://Level 1/scenes/guia_pausa.tscn" id="7_fjtmi"]
 
 [node name="Level1_Main" type="Control"]
 layout_mode = 3
@@ -65,6 +66,11 @@ offset_bottom = -128.0
 texture_normal = ExtResource("5_cryc4")
 texture_pressed = ExtResource("6_fjtmi")
 stretch_mode = 0
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+
+[node name="guia" parent="PauseLayer" instance=ExtResource("7_fjtmi")]
+visible = false
 
 [connection signal="pressed" from="imgButton" to="." method="_on_img_button_pressed"]
 [connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
