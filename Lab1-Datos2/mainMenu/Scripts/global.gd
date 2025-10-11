@@ -3,6 +3,7 @@ extends Node
 
 var arbol: ArbolBinario = ArbolBinario.new()
 var index: int
+var estado_des: bool
 
 func _ready() -> void:
 	

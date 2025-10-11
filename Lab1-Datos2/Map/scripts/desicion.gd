@@ -6,7 +6,7 @@ extends Node2D
 @onready var pregunta: Label = $question/pregunta
 
 func _ready() -> void:
-	print(Global.index)
+	Global.estado_des = true
 	label.text = str(Global.arbol.buscar_subarbol(Global.index).izq.dato["valor"])
 	label_2.text = str(Global.arbol.buscar_subarbol(Global.index).der.dato["valor"])
 	pregunta.text = Global.arbol.buscar_subarbol(Global.index).dato["pregunta"]
@@ -32,6 +32,7 @@ func _on_exit_1_body_entered(body: Node2D) -> void:
 	elif Global.index == 13:
 		GameState.reset()
 		Global.index = Global.index-1
+	Global.estado_des = false
 	SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])
 	
 func _on_exit_2_body_entered(body: Node2D) -> void:
@@ -53,8 +54,10 @@ func _on_exit_2_body_entered(body: Node2D) -> void:
 	elif Global.index == 13:
 		Global.index = Global.index+1
 		GameState.reset()
+	Global.estado_des = false
 	SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])
 
 
 func _on_return_body_entered(body: Node2D) -> void:
+	Global.estado_des = false
 	SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])

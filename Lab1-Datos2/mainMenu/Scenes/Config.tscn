@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://irllcgkr763b"]
+[gd_scene load_steps=25 format=3 uid="uid://irllcgkr763b"]
 
 [ext_resource type="Texture2D" uid="uid://b57sg4nf3c1mh" path="res://mainMenu/Assets/Images/FondoBajito.png" id="1_07mmq"]
 [ext_resource type="Script" uid="uid://bvfriqc0p2qmu" path="res://mainMenu/Scripts/config.gd" id="1_etgpq"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://d2n3uauq4aexv" path="res://mainMenu/Assets/buttons/Exit_1.png" id="19_6hsfp"]
 [ext_resource type="Texture2D" uid="uid://cldffnh07oe4b" path="res://mainMenu/Assets/buttons/Exit_3.png" id="20_wnki7"]
 [ext_resource type="Texture2D" uid="uid://ca8a1kok3dnfp" path="res://mainMenu/Assets/buttons/Exit_2.png" id="21_qtea6"]
-[ext_resource type="Script" uid="uid://bmg65v4fxj60d" path="res://mainMenu/Scripts/exite_game.gd" id="22_3a6cr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtea6"]
 texture = ExtResource("1_07mmq")
@@ -253,7 +252,6 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("19_6hsfp")
 texture_pressed = ExtResource("20_wnki7")
 texture_hover = ExtResource("21_qtea6")
-script = ExtResource("22_3a6cr")
 
 [connection signal="value_changed" from="Panel/Panel2/Sound_bar/Control/VBoxContainer/VolumeBar/sfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="Panel/Panel2/muisc_bar/Control/VBoxContainer/VolumeBar/musicSlider" to="." method="_on_music_slider_value_changed"]

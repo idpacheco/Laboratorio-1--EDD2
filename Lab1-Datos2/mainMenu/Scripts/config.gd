@@ -21,7 +21,10 @@ func _on_back_button_pressed() -> void:
 	if Global.index ==-1:
 		SceneTransitions.change_scene_to_file("res://mainMenu/Scenes/main.tscn")
 	else:
-		SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])
+		if Global.estado_des:
+			SceneTransitions.change_scene_to_file("res://Map/scences/maps/question_map.tscn")
+		else:
+			SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])
 	pass # Replace with function body.
 
 
