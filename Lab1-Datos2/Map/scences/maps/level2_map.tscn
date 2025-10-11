@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dy7jvj46y8f0j"]
+[gd_scene load_steps=17 format=4 uid="uid://dy7jvj46y8f0j"]
 
 [ext_resource type="Texture2D" uid="uid://dcry181iwvmsx" path="res://Map/assets/tiles2/tileset x1.png" id="1_awpk5"]
 [ext_resource type="Script" uid="uid://br6hc1m1n3iho" path="res://Map/scripts/level_2_map.gd" id="1_wr576"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0cxivc2i4qob" path="res://Map/scences/eje.tscn" id="5_wr74k"]
 [ext_resource type="PackedScene" uid="uid://dpwmk1u3eg5jx" path="res://Map/scences/objects/computer.tscn" id="6_5m36g"]
 [ext_resource type="Script" uid="uid://bni1ve4ejsgbj" path="res://Map/scripts/exit.gd" id="7_6dmbl"]
+[ext_resource type="PackedScene" uid="uid://c7v1tmuysgrtl" path="res://mainMenu/Scenes/settings_button.tscn" id="9_wr74k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5tyg"]
 texture = ExtResource("1_awpk5")
@@ -2406,6 +2407,12 @@ position = Vector2(320, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(320, 19)
 shape = SubResource("RectangleShape2D_wr74k")
+
+[node name="SettingsButton" parent="." instance=ExtResource("9_wr74k")]
+offset_left = 610.0
+offset_top = 12.0
+offset_right = 626.0
+offset_bottom = 28.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="return" to="return" method="_on_body_return_entered"]

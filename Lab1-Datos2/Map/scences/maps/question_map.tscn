@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://df52jj3ekrxpq"]
+[gd_scene load_steps=25 format=4 uid="uid://df52jj3ekrxpq"]
 
 [ext_resource type="Texture2D" uid="uid://dcry181iwvmsx" path="res://Map/assets/tiles2/tileset x1.png" id="1_8porc"]
 [ext_resource type="TileSet" uid="uid://hq7fnwobye1j" path="res://Level 4/tiles/tileset/level4Tiles.tres" id="2_ht4ce"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://r3ll5p606jkt" path="res://Map/scences/objects/cartel.tscn" id="9_2cov2"]
 [ext_resource type="Script" uid="uid://wifc17f3jc8v" path="res://Map/scripts/desicion.gd" id="10_nhgol"]
 [ext_resource type="Texture2D" uid="uid://bpf4b6mu1v3ch" path="res://Map/assets/game boy ui.png" id="11_x33px"]
+[ext_resource type="PackedScene" uid="uid://c7v1tmuysgrtl" path="res://mainMenu/Scenes/settings_button.tscn" id="12_iokh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iokh1"]
 texture = ExtResource("1_8porc")
@@ -5059,6 +5060,12 @@ offset_top = 10.0
 offset_right = 452.0
 offset_bottom = 33.0
 text = "Numero"
+
+[node name="SettingsButton" parent="." instance=ExtResource("12_iokh1")]
+offset_left = 612.0
+offset_top = 13.0
+offset_right = 628.0
+offset_bottom = 29.0
 
 [connection signal="body_entered" from="exit1" to="." method="_on_exit_1_body_entered"]
 [connection signal="body_entered" from="exit2" to="." method="_on_exit_2_body_entered"]

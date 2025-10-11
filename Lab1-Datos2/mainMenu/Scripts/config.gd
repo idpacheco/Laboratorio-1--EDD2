@@ -18,7 +18,10 @@ func _ready() -> void:
 func _on_back_button_pressed() -> void:
 	AudioManager.SFXPlayer.stream = preload("res://mainMenu/Assets/Audio/tf2-button-click-hover.mp3")
 	AudioManager.SFXPlayer.play()
-	SceneTransitions.change_scene_to_file("res://mainMenu/Scenes/main.tscn")
+	if Global.index ==-1:
+		SceneTransitions.change_scene_to_file("res://mainMenu/Scenes/main.tscn")
+	else:
+		SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])
 	pass # Replace with function body.
 
 
@@ -49,4 +52,9 @@ func _on_pantallla_completa_pressed() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	pass # Replace with function body.
+
+
+func _on_exite_game_pressed() -> void:
+	get_tree().quit()
 	pass # Replace with function body.

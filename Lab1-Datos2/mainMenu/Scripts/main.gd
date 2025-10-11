@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	Global.index = -1
 	
 func _on_play_button_pressed() -> void:
 

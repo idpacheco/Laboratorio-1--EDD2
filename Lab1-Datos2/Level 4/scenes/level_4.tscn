@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cf23tp7m1adgc"]
+[gd_scene load_steps=34 format=4 uid="uid://cf23tp7m1adgc"]
 
 [ext_resource type="TileSet" uid="uid://hq7fnwobye1j" path="res://Level 4/tiles/tileset/level4Tiles.tres" id="1_6j14n"]
 [ext_resource type="Script" uid="uid://diufqeqbkrjvs" path="res://Level 4/Scripts/level_4.gd" id="1_u1ssn"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cpyu3tthbc7a0" path="res://Level 2/assets/Continue_2.png" id="20_7687g"]
 [ext_resource type="PackedScene" uid="uid://3hw5ft1u882y" path="res://Map/scences/objects/door.tscn" id="21_vf5ab"]
 [ext_resource type="Script" uid="uid://bni1ve4ejsgbj" path="res://Map/scripts/exit.gd" id="22_72xug"]
+[ext_resource type="PackedScene" uid="uid://c7v1tmuysgrtl" path="res://mainMenu/Scenes/settings_button.tscn" id="23_vf5ab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf5ab"]
 texture = ExtResource("3_7687g")
@@ -2638,6 +2639,12 @@ grow_vertical = 2
 texture_normal = ExtResource("18_lev6k")
 texture_pressed = ExtResource("19_72xug")
 texture_hover = ExtResource("20_7687g")
+
+[node name="SettingsButton" parent="HUD" instance=ExtResource("23_vf5ab")]
+offset_left = 587.0
+offset_top = 309.0
+offset_right = 620.0
+offset_bottom = 342.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_am3jy")
