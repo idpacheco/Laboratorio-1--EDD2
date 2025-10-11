@@ -19,14 +19,18 @@ func _on_exit_1_body_entered(body: Node2D) -> void:
 	elif Global.index == 3:
 		Global.index = Global.index-2
 	elif Global.index == 1:
+		GameState.reset()
 		Global.index = Global.index-1
 	elif Global.index == 11:
 		Global.index = Global.index-2
 	elif Global.index == 9:
+		GameState.reset()
 		Global.index = Global.index-1
 	elif Global.index == 5:
+		GameState.reset()
 		Global.index = Global.index-1
 	elif Global.index == 13:
+		GameState.reset()
 		Global.index = Global.index-1
 	SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])
 	
@@ -36,15 +40,19 @@ func _on_exit_2_body_entered(body: Node2D) -> void:
 	elif Global.index == 3:
 		Global.index = Global.index+2
 	elif Global.index == 1:
+		GameState.reset()
 		Global.index = Global.index+1
 	elif Global.index == 11:
 		Global.index = Global.index+2
 	elif Global.index == 9:
+		GameState.reset()
 		Global.index = Global.index+1
 	elif Global.index == 5:
 		Global.index = Global.index+1
+		GameState.reset()
 	elif Global.index == 13:
 		Global.index = Global.index+1
+		GameState.reset()
 	SceneTransitions.change_scene_to_file(Global.arbol.buscar_subarbol(Global.index).dato["nombre"])
 
 

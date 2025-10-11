@@ -22,6 +22,8 @@ var texture_empty = preload("res://Level 4/Assets/textures/EneergyEmpty.tres")
 var panel_mostrado := false
 
 func _ready():
+	if Global.arbol.buscar_subarbol(Global.index).dato["activado"]:
+		door.one_way_collision = true
 	panel_final.visible = false
 	actualizar_palancas_visual()
 
@@ -85,6 +87,10 @@ func _on_next_to_game_pressed() -> void:
 		Global.arbol.cambiar_estado(Global.index,true)
 		door.one_way_collision = true
 		panel_final.visible = false
-		print("Escogiste una puerta erronea intenta con otra ruta")
+		panel_final.visible = false
+		SceneTransitions.change_scene_to_file("res://mainMenu/Scenes/win.tscn")
+	else:
+		SceneTransitions.change_scene_to_file("res://mainMenu/Scenes/loser.tscn")
+		
 		
 	pass # Replace with function body.
