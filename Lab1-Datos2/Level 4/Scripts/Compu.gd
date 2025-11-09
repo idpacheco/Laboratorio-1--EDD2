@@ -9,7 +9,7 @@ func _ready():
 		
 	else:
 		is_on = false
-
+	
 func _process(delta: float) -> void:
 	if i and Input.is_action_just_pressed("E"):
 		toggle_lever()
